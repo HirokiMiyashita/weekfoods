@@ -1,7 +1,7 @@
 export const Morning = {
   id: 1,
   menu: {
-    main: "米",
+    main: "朝ご飯",
     side: "チキントマト煮込み",
     side2: "キャベツとベーコンのコンソメ炒め",
     side3: "洋風ニンジンナムル",

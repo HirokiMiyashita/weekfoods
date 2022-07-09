@@ -1,15 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import {
-  SundayData,
-  MondayData,
-  TuesdayData,
-  WednesdayData,
-  ThursdayData,
-  FridayData,
-  SaturdayData,
-} from "../src/data/data";
 import * as Sunday from "../src/data/weeksdata/Sunday";
 import * as Monday from "../src/data/weeksdata/Monday";
 import * as Tuesday from "../src/data/weeksdata/Tuesday";
@@ -30,17 +21,17 @@ const Home: NextPage = () => {
       case "日":
         return <WeeksData day={Sunday} hour={hour} />;
       case "月":
-        return <WeeksData />;
+        return <WeeksData day={Monday} hour={hour} />;
       case "火":
-        return <WeeksData />;
+        return <WeeksData day={Tuesday} hour={hour} />;
       case "水":
-        return <WeeksData />;
+        return <WeeksData day={WednesDay} hour={hour} />;
       case "木":
-        return <WeeksData />;
+        return <WeeksData day={Thursday} hour={hour} />;
       case "金":
-        return <WeeksData />;
+        return <WeeksData day={Friday} hour={hour} />;
       case "土":
-        return <WeeksData day={Saturday} />;
+        return <WeeksData day={Saturday} hour={hour} />;
     }
   };
   return <div>{Weeks()}</div>;

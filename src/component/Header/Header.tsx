@@ -1,6 +1,4 @@
 import React from "react";
-import { MenuType } from "../../data/TypeData";
-import Image from "next/image";
 import SwipeableViews from "react-swipeable-views";
 import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -50,11 +48,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export const WeeksData = (props: any) => {
-  const LunchMenu = props.day.Lunch.menu;
-  const DinnerMenu = props.day.Dinner.menu;
-  const MoningMenu = props.day.Morning.menu;
-
+export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -67,62 +61,6 @@ export const WeeksData = (props: any) => {
     setValue(index);
   };
 
-  const Morning = () => {
-    return (
-      <>
-        <p
-          key={props.day.Morning.id}
-          style={{ textAlign: "center", fontSize: "1.8rem" }}
-        >
-          {MoningMenu.main}
-        </p>
-        <div
-          style={{
-            position: "relative",
-            width: "400px",
-            height: "400px",
-            margin: "0 auto",
-          }}
-        >
-          <Image src={MoningMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </>
-    );
-  };
-  const Lunch = () => {
-    return (
-      <>
-        <p key={props.day.Lunch.id}>{LunchMenu.main}</p>
-        <div style={{ position: "relative", width: "100px", height: "100px" }}>
-          <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </>
-    );
-  };
-  const Dinner = () => {
-    return (
-      <>
-        <p key={props.day.Dinner.id}>{DinnerMenu.main}</p>
-        <div style={{ position: "relative", width: "100px", height: "100px" }}>
-          <Image src={DinnerMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </>
-    );
-  };
-  // 4 <= hour && hour < 10
-  console.log(props.hour);
-  const Foodtime = () => {
-    switch (true) {
-      case 4 <= props.hour || props.hour >= 9:
-        return <Morning />;
-      case 10 <= props.hour || props.hour >= 14:
-        return <Lunch />;
-      case 15 <= props.hour || props.hour >= 20:
-        return <Dinner />;
-      default:
-        return <p>食べるな殺すぞ</p>;
-    }
-  };
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -134,9 +72,9 @@ export const WeeksData = (props: any) => {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="料理説明" {...a11yProps(0)} />
-          <Tab label="作り方" {...a11yProps(1)} />
-          <Tab label="材料" {...a11yProps(2)} />
+          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -145,7 +83,7 @@ export const WeeksData = (props: any) => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          {Foodtime()}
+          Item One
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
@@ -156,4 +94,4 @@ export const WeeksData = (props: any) => {
       </SwipeableViews>
     </div>
   );
-};
+}
