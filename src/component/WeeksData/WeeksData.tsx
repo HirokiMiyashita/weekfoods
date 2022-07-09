@@ -79,8 +79,8 @@ export const WeeksData = (props: any) => {
         <div
           style={{
             position: "relative",
-            width: "400px",
-            height: "400px",
+            width: "300px",
+            height: "300px",
             margin: "0 auto",
           }}
         >
