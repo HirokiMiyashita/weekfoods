@@ -1,10 +1,9 @@
 export const Morning = {
   id: 1,
   menu: {
-    main: "朝ご飯",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
-    side3: "洋風ニンジンナムル",
+    main: "鮭とキノコのホイル焼き",
+    appetizer: "冷奴",
+    soup: "水菜の味噌汁",
     img: "/foods/sunday.png",
   },
 };
