@@ -5,7 +5,7 @@ export const Morning = {
     side: "チキントマト煮込み",
     side2: "キャベツとベーコンのコンソメ炒め",
     side3: "洋風ニンジンナムル",
-    img: "/foods/sunday.png",
+    img: "/foods/friday.png",
   },
 };
 
@@ -16,7 +16,7 @@ export const Lunch = {
     side: "チキントマト煮込み",
     side2: "キャベツとベーコンのコンソメ炒め",
     side3: "洋風ニンジンナムル",
-    img: "/foods/sunday.png",
+    img: "/foods/friday.png",
   },
 };
 
@@ -27,6 +27,6 @@ export const Dinner = {
     side: "チキントマト煮込み",
     side2: "キャベツとベーコンのコンソメ炒め",
     side3: "洋風ニンジンナムル",
-    img: "/foods/sunday.png",
+    img: "/foods/friday.png",
   },
 };
