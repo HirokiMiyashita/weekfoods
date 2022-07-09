@@ -6,7 +6,7 @@ import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
 interface TabPanelProps {
@@ -29,7 +29,7 @@ function TabPanel(props: TabPanelProps, i: any) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <p>{children}</p>
         </Box>
       )}
     </div>
@@ -70,12 +70,9 @@ export const WeeksData = (props: any) => {
   const Morning = () => {
     return (
       <>
-        <p
-          key={props.day.Morning.id}
-          style={{ textAlign: "center", fontSize: "1.8rem" }}
-        >
+        <h1 style={{ textAlign: "center", fontSize: "1.8rem" }}>
           {MoningMenu.main}
-        </p>
+        </h1>
         <div
           style={{
             position: "relative",
@@ -91,22 +88,22 @@ export const WeeksData = (props: any) => {
   };
   const Lunch = () => {
     return (
-      <>
+      <div>
         <p key={props.day.Lunch.id}>{LunchMenu.main}</p>
         <div style={{ position: "relative", width: "100px", height: "100px" }}>
           <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
         </div>
-      </>
+      </div>
     );
   };
   const Dinner = () => {
     return (
-      <>
+      <div>
         <p key={props.day.Dinner.id}>{DinnerMenu.main}</p>
         <div style={{ position: "relative", width: "100px", height: "100px" }}>
           <Image src={DinnerMenu.img} width={100} height={100} layout="fill" />
         </div>
-      </>
+      </div>
     );
   };
   // 4 <= hour && hour < 10
