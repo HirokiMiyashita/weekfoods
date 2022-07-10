@@ -8,6 +8,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 // import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { MorningName, LunchName, DinnerName } from "../Food/FoodName";
+import { MorningMake, LunchMake, DinnerMake } from "../Food/FoodMake";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -51,9 +53,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export const WeeksData = (props: any) => {
-  const LunchMenu = props.day.Lunch.menu;
-  const DinnerMenu = props.day.Dinner.menu;
-  const MoningMenu = props.day.Morning.menu;
+  const LunchMenu = props.name.Lunch.menu;
+  const DinnerMenu = props.name.Dinner.menu;
+  const MoningMenu = props.name.Morning.menu;
+  const LMake = props.make.Lunch.menu;
+  const DMake = props.make.Dinner.menu;
+  const MMake = props.make.Morning.menu;
 
   const classes = useStyles();
   const theme = useTheme();
@@ -67,55 +72,27 @@ export const WeeksData = (props: any) => {
     setValue(index);
   };
 
-  const Morning = () => {
-    return (
-      <>
-        <h1 style={{ textAlign: "center", fontSize: "1.8rem" }}>
-          {MoningMenu.main}
-        </h1>
-        <div
-          style={{
-            position: "relative",
-            width: "300px",
-            height: "300px",
-            margin: "0 auto",
-          }}
-        >
-          <Image src={MoningMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </>
-    );
-  };
-  const Lunch = () => {
-    return (
-      <div>
-        <p key={props.day.Lunch.id}>{LunchMenu.main}</p>
-        <div style={{ position: "relative", width: "100px", height: "100px" }}>
-          <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </div>
-    );
-  };
-  const Dinner = () => {
-    return (
-      <div>
-        <p key={props.day.Dinner.id}>{DinnerMenu.main}</p>
-        <div style={{ position: "relative", width: "100px", height: "100px" }}>
-          <Image src={DinnerMenu.img} width={100} height={100} layout="fill" />
-        </div>
-      </div>
-    );
-  };
-  // 4 <= hour && hour < 10
-  console.log(props.hour);
-  const Foodtime = () => {
+  const Foodname = () => {
     switch (true) {
-      case 4 <= props.hour || props.hour >= 9:
-        return <Morning />;
+      case 6 <= props.hour || props.hour >= 9:
+        return <MorningName name={MoningMenu} />;
       case 10 <= props.hour || props.hour >= 14:
-        return <Lunch />;
+        return <LunchName name={LunchMenu} />;
       case 15 <= props.hour || props.hour >= 20:
-        return <Dinner />;
+        return <DinnerName name={DinnerMenu} />;
+      default:
+        return <p>食べるな殺すぞ</p>;
+    }
+  };
+
+  const Foodmake = () => {
+    switch (true) {
+      case 6 <= props.hour || props.hour >= 9:
+        return <MorningMake make={MMake} />;
+      case 10 <= props.hour || props.hour >= 14:
+        return <LunchMake make={LMake} />;
+      case 15 <= props.hour || props.hour >= 20:
+        return <DinnerMake make={DMake} />;
       default:
         return <p>食べるな殺すぞ</p>;
     }
@@ -142,13 +119,13 @@ export const WeeksData = (props: any) => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          {Foodtime()}
+          <div>{Foodname()}</div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+          <div>{Foodmake()}</div>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+          {Foodname()}
         </TabPanel>
       </SwipeableViews>
     </div>
