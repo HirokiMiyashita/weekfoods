@@ -20,7 +20,6 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps, i: any) {
   const { children, value, index, ...other } = props;
-  console.log(i);
   return (
     <div
       role="tabpanel"
@@ -84,8 +83,6 @@ export const WeeksData = (props: any) => {
         return <p>食べるな殺すぞ</p>;
     }
   };
-
-  console.log(props.hour);
   const Foodmake = () => {
     switch (true) {
       case 6 <= props.hour || props.hour >= 9:

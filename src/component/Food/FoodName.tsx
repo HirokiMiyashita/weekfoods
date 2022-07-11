@@ -26,22 +26,44 @@ export const MorningName = (props: any) => {
 
 export const LunchName = (props: any) => {
   const LunchMenu = props.name;
+  const type = typeof LunchMenu.img;
+
   return (
     <>
       <h1>料理名</h1>
       <p style={{ textAlign: "center", fontSize: "1.8rem" }}>
         {LunchMenu.main}
       </p>
-      <div
-        style={{
-          position: "relative",
-          width: "300px",
-          height: "300px",
-          margin: "0 auto",
-        }}
-      >
-        <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
-      </div>
+      {type === "object" ? (
+        <>
+          {Object.values(LunchMenu.img).map((item: any) => (
+            // console.log(typeof item)
+            // <img src={item} alt="" />
+            <div
+              style={{
+                position: "relative",
+                width: "300px",
+                height: "300px",
+                margin: "0 auto",
+              }}
+            >
+              <Image src={item} width={100} height={100} layout="fill" />
+              {/* <Image src={item} width={100} height={100} layout="fill" /> */}
+            </div>
+          ))}
+        </>
+      ) : (
+        <div
+          style={{
+            position: "relative",
+            width: "300px",
+            height: "300px",
+            margin: "0 auto",
+          }}
+        >
+          <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
+        </div>
+      )}
     </>
   );
 };
