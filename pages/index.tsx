@@ -68,7 +68,12 @@ const Home: NextPage = () => {
         );
     }
   };
-  return <div>{Weeks()}</div>;
+  return (
+    <div>
+      {/* <ParallaxHorizontalScrollPage /> */}
+      {Weeks()}
+    </div>
+  );
 };
 
 export default Home;

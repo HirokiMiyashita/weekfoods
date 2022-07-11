@@ -74,11 +74,11 @@ export const WeeksData = (props: any) => {
 
   const Foodname = () => {
     switch (true) {
-      case 6 <= props.hour && 9 >= props.hour:
+      case 6 <= Hour && 9 >= Hour:
         return <MorningName name={MoningMenu} />;
-      case 10 <= props.hour && 14 >= props.hour:
+      case 10 <= Hour && 14 >= Hour:
         return <LunchName name={LunchMenu} />;
-      case 15 <= props.hour && 20 >= props.hour:
+      case 15 <= Hour && 20 >= Hour:
         return <DinnerName name={DinnerMenu} />;
       default:
         return <p>食べるな殺すぞ</p>;
