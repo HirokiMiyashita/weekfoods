@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import * as FoodMakeSunday from "../src/data/weeksFoodMakeData/Sunday";
 import * as FoodMakeMonday from "../src/data/weeksFoodMakeData/Monday";
 import * as FoodMakeTuesday from "../src/data/weeksFoodMakeData/Tuesday";
@@ -22,7 +20,6 @@ const Home: NextPage = () => {
   const dayOfWeek = date.getDay();
   var hour = date.getHours(); // 時
   const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
-  console.log(dayOfWeekStr);
   const Weeks = () => {
     switch (dayOfWeekStr) {
       case "日":
