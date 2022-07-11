@@ -11,7 +11,7 @@ export const Lunch = {
   menu: {
     main: "ハムとチーズのブリトー』",
     soup: "オニオンスープ",
-    img: "/foods/lunch/Friday.png",
+    img: "/foods/lunch/Friday/Friday.png",
   },
 };
 

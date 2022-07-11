@@ -10,7 +10,7 @@ export const Lunch = {
   id: 2,
   menu: {
     main: "スンドゥブうどん",
-    img: "/foods/lunch/monday.png",
+    img: "/foods/lunch/Monday/monday.png",
   },
 };
 
