@@ -14,9 +14,9 @@ export const Lunch = {
     soup: "玉ねぎと人参のスープ",
     side3: "洋風ニンジンナムル",
     img: {
-      main: "/foods/Wednesdaystaple.png",
-      side: "/foods/WednesdaySide.png",
-      soup: "/foods/WednesdaySoup.png",
+      main: "/foods/lunch/Wednesdaystaple.png",
+      side: "/foods/lunch/WednesdaySide.png",
+      soup: "/foods/lunch/WednesdaySoup.png",
     },
   },
 };
