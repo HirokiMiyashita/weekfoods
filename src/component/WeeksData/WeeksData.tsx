@@ -59,10 +59,10 @@ export const WeeksData = (props: any) => {
   const LMake = props.make.Lunch.menu;
   const DMake = props.make.Dinner.menu;
   const MMake = props.make.Morning.menu;
-
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const Hour = 11;
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
@@ -74,17 +74,18 @@ export const WeeksData = (props: any) => {
 
   const Foodname = () => {
     switch (true) {
-      case 6 <= props.hour || props.hour >= 9:
+      case 6 <= Hour && 9 >= Hour:
         return <MorningName name={MoningMenu} />;
-      case 10 <= props.hour || props.hour >= 14:
+      case 10 <= Hour && 14 >= Hour:
         return <LunchName name={LunchMenu} />;
-      case 15 <= props.hour || props.hour >= 20:
+      case 15 <= Hour && 20 >= Hour:
         return <DinnerName name={DinnerMenu} />;
       default:
         return <p>食べるな殺すぞ</p>;
     }
   };
 
+  console.log(props.hour);
   const Foodmake = () => {
     switch (true) {
       case 6 <= props.hour || props.hour >= 9:
@@ -97,6 +98,7 @@ export const WeeksData = (props: any) => {
         return <p>食べるな殺すぞ</p>;
     }
   };
+  Foodname();
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -125,7 +127,8 @@ export const WeeksData = (props: any) => {
           <div>{Foodmake()}</div>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          {Foodname()}
+          {/* {Foodname()} */}
+          item
         </TabPanel>
       </SwipeableViews>
     </div>

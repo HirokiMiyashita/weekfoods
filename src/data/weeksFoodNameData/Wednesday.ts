@@ -1,22 +1,23 @@
 export const Morning = {
   id: 1,
   menu: {
-    main: "米",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
-    side3: "洋風ニンジンナムル",
-    img: "/foods/wednesday.png",
+    main: "プロテイン",
+    img: "/foods/morning/protein.png",
   },
 };
 
 export const Lunch = {
   id: 2,
   menu: {
-    main: "米",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
+    main: "チキンとタイカレーのチーズトースト",
+    side: "レタスとハムと卵のマヨ胡椒炒め",
+    soup: "玉ねぎと人参のスープ",
     side3: "洋風ニンジンナムル",
-    img: "/foods/wednesday.png",
+    img: {
+      main: "/foods/Wednesdaystaple.png",
+      side: "/foods/WednesdaySide.png",
+      soup: "/foods/WednesdaySoup.png",
+    },
   },
 };
 

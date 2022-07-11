@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export const MorningName = (props: any) => {
   const MoningMenu = props.name;
+  console.log(MoningMenu);
   return (
     <>
       <h1>料理名</h1>
@@ -31,7 +32,14 @@ export const LunchName = (props: any) => {
       <p style={{ textAlign: "center", fontSize: "1.8rem" }}>
         {LunchMenu.main}
       </p>
-      <div style={{ position: "relative", width: "100px", height: "100px" }}>
+      <div
+        style={{
+          position: "relative",
+          width: "300px",
+          height: "300px",
+          margin: "0 auto",
+        }}
+      >
         <Image src={LunchMenu.img} width={100} height={100} layout="fill" />
       </div>
     </>
