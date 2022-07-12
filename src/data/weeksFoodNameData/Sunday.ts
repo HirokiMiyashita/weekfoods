@@ -17,10 +17,7 @@ export const Lunch = {
 export const Dinner = {
   id: 3,
   menu: {
-    main: "米",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
-    side3: "洋風ニンジンナムル",
+    main: "瓦そば・大根と人参の浅漬け",
     img: "/foods/sunday.png",
   },
 };

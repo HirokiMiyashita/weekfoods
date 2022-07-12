@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/css": "^11.9.0",
     "@material-ui/core": "^4.12.4",
+    "destyle.css": "^3.0.2",
     "next": "12.2.0",
     "next-pwa": "^5.5.4",
     "react": "18.2.0",

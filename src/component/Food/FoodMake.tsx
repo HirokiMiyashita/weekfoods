@@ -56,19 +56,36 @@ export const LunchMake = (props: any) => {
     </div>
   );
 };
+
 export const DinnerMake = (props: any) => {
-  const DinnerMenu = props.make;
-  console.log(DinnerMenu);
+  const DinnerMenu = props.make.make;
   return (
     <div>
       <h1>作り方</h1>
-      <p style={{ textAlign: "center", fontSize: "1rem" }}>{DinnerMenu}</p>
-
-      {/* <>
-      {  Object.values(props.name).map((item) => {
-        <p>{item.}</p>
-      }}
-      </> */}
+      <dl>
+        {DinnerMenu.map((item: { first: string; imgfirst: string }) => {
+          return (
+            <>
+              <dt>{item.first}</dt>
+              <dd
+                style={{
+                  position: "relative",
+                  width: "200px",
+                  height: "200px",
+                  margin: "0 auto",
+                }}
+              >
+                <Image
+                  src={item.imgfirst}
+                  width={100}
+                  height={100}
+                  layout="fill"
+                />
+              </dd>
+            </>
+          );
+        })}
+      </dl>
     </div>
   );
 };

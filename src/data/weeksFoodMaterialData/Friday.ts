@@ -1,34 +1,31 @@
 export const Morning = {
   id: 1,
-  menu: {
-    main: "プロテイン",
-    img: "/foods/morning/protein.png",
-  },
+  material: [
+    { name: "プロテインの粉", num: "スプーン2杯" },
+    { name: "水", num: "200ml" },
+  ],
 };
 
 export const Lunch = {
   id: 2,
-
   material: [
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
-    { name: "", num: "" },
+    { name: "オールドエルパソ フラワートルティーヤ", num: "2枚" },
+    { name: "ロースハム", num: "4枚" },
+    { name: "スライスチーズ", num: "2枚" },
+    { name: "レタス", num: "3枚" },
+    { name: "トマト", num: "3枚" },
+    { name: "コーン缶（ホール）", num: "1/2" },
   ],
 };
 
 export const Dinner = {
   id: 3,
-  menu: {
-    main: "米",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
-    side3: "洋風ニンジンナムル",
-    img: "/foods/friday.png",
-  },
+  material: [
+    { name: "オールドエルパソ フラワートルティーヤ", num: "2枚" },
+    { name: "ロースハム", num: "4枚" },
+    { name: "スライスチーズ", num: "2枚" },
+    { name: "レタス", num: "3枚" },
+    { name: "トマト", num: "3枚" },
+    { name: "コーン缶（ホール）", num: "1/2" },
+  ],
 };

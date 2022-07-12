@@ -9,8 +9,7 @@ export const Morning = {
 export const Lunch = {
   id: 2,
   menu: {
-    main: "ハムとチーズのブリトー』",
-    soup: "オニオンスープ",
+    main: "ハムとチーズのブリトー",
     img: "/foods/lunch/Friday/Friday.png",
   },
 };
@@ -18,10 +17,7 @@ export const Lunch = {
 export const Dinner = {
   id: 3,
   menu: {
-    main: "米",
-    side: "チキントマト煮込み",
-    side2: "キャベツとベーコンのコンソメ炒め",
-    side3: "洋風ニンジンナムル",
+    main: "キャベツとベーコンのコンソメ炒め",
     img: "/foods/friday.png",
   },
 };
