@@ -10,11 +10,7 @@ export const Lunch = {
   id: 2,
   menu: {
     main: "レンチンお好み焼うどん",
-    side: "ミニトマトと人参のらっきょ酢和え",
-    img: {
-      side: "/foods/lunch/Saturday/SaturdaySide.png",
-      staple: "/foods/lunch/Saturday/Saturdaystaple.png",
-    },
+    img: "/foods/lunch/Saturday/Saturdaystaple.png",
   },
 };
 

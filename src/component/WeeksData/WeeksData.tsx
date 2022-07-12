@@ -10,6 +10,11 @@ import Tab from "@material-ui/core/Tab";
 import Box from "@material-ui/core/Box";
 import { MorningName, LunchName, DinnerName } from "../Food/FoodName";
 import { MorningMake, LunchMake, DinnerMake } from "../Food/FoodMake";
+import {
+  MorningMaterial,
+  LunchMaterial,
+  DinnerMaterial,
+} from "../Food/FoodMaterial";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -47,7 +52,8 @@ function a11yProps(index: any) {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#D8B484",
     width: "100%",
   },
 }));
@@ -57,9 +63,11 @@ export const WeeksData = (props: any) => {
   const DinnerMenu = props.name.Dinner.menu;
   const MoningMenu = props.name.Morning.menu;
   const LMake = props.make.Lunch;
-  console.log(LMake);
   const DMake = props.make.Dinner;
   const MMake = props.make.Morning;
+  const MMaterial = props.material.Morning;
+  const LMaterial = props.material.Lunch;
+  const DMaterial = props.material.Dinner;
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -75,11 +83,11 @@ export const WeeksData = (props: any) => {
 
   const Foodname = () => {
     switch (true) {
-      case 6 <= Hour && 9 >= Hour:
+      case 6 <= props.hour && 9 >= props.hour:
         return <MorningName name={MoningMenu} />;
-      case 10 <= Hour && 14 >= Hour:
+      case 10 <= props.hour && 14 >= props.hour:
         return <LunchName name={LunchMenu} />;
-      case 15 <= Hour && 20 >= Hour:
+      case 15 <= props.hour && 20 >= props.hour:
         return <DinnerName name={DinnerMenu} />;
       default:
         return <p>食べるな殺すぞ</p>;
@@ -87,17 +95,28 @@ export const WeeksData = (props: any) => {
   };
   const Foodmake = () => {
     switch (true) {
-      case 6 <= Hour && 9 >= Hour:
+      case 6 <= props.hour && 9 >= props.hour:
         return <MorningMake make={MMake} />;
-      case 10 <= Hour && 14 >= Hour:
+      case 10 <= props.hour && 14 >= props.hour:
         return <LunchMake make={LMake} />;
-      case 15 <= Hour && 20 >= Hour:
+      case 15 <= props.hour && 20 >= props.hour:
         return <DinnerMake make={DMake} />;
       default:
         return <p>食べるな殺すぞ</p>;
     }
   };
-  Foodname();
+  const Foodmaterial = () => {
+    switch (true) {
+      case 6 <= props.hour && 9 >= props.hour:
+        return <MorningMaterial material={MMaterial} />;
+      case 10 <= props.hour && 14 >= props.hour:
+        return <LunchMaterial material={LMaterial} />;
+      case 15 <= props.hour && 20 >= props.hour:
+        return <DinnerMaterial material={DMaterial} />;
+      default:
+        return <p>食べるな殺すぞ</p>;
+    }
+  };
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -120,14 +139,13 @@ export const WeeksData = (props: any) => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <div>{Foodname()}</div>
+          <div style={{ height: "100vh" }}>{Foodname()}</div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <div>{Foodmake()}</div>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          {/* {Foodname()} */}
-          item
+          <div style={{ height: "100vh" }}>{Foodmaterial()}</div>
         </TabPanel>
       </SwipeableViews>
     </div>

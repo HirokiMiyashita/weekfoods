@@ -13,6 +13,13 @@ import * as FoodNameWednesDay from "../src/data/weeksFoodNameData/Wednesday";
 import * as FoodNameThursday from "../src/data/weeksFoodNameData/Thursday";
 import * as FoodNameFriday from "../src/data/weeksFoodNameData/Friday";
 import * as FoodNameSaturday from "../src/data/weeksFoodNameData/Saturday";
+import * as FoodMaterialSunday from "../src/data/weeksFoodMaterialData/Sunday";
+import * as FoodMaterialMonday from "../src/data/weeksFoodMaterialData/Monday";
+import * as FoodMaterialTuesday from "../src/data/weeksFoodMaterialData/Tuesday";
+import * as FoodMaterialWednesDay from "../src/data/weeksFoodMaterialData/Wednesday";
+import * as FoodMaterialThursday from "../src/data/weeksFoodMaterialData/Thursday";
+import * as FoodMaterialFriday from "../src/data/weeksFoodMaterialData/Friday";
+import * as FoodMaterialSaturday from "../src/data/weeksFoodMaterialData/Saturday";
 import { WeeksData } from "../src/component/WeeksData/WeeksData";
 
 const Home: NextPage = () => {
@@ -24,11 +31,21 @@ const Home: NextPage = () => {
     switch (dayOfWeekStr) {
       case "日":
         return (
-          <WeeksData name={FoodNameSunday} hour={hour} make={FoodMakeSunday} />
+          <WeeksData
+            name={FoodNameSunday}
+            hour={hour}
+            make={FoodMakeSunday}
+            material={FoodMaterialSunday}
+          />
         );
       case "月":
         return (
-          <WeeksData name={FoodNameMonday} hour={hour} make={FoodMakeMonday} />
+          <WeeksData
+            name={FoodNameMonday}
+            hour={hour}
+            make={FoodMakeMonday}
+            material={FoodMaterialMonday}
+          />
         );
       case "火":
         return (
@@ -36,6 +53,7 @@ const Home: NextPage = () => {
             name={FoodNameTuesday}
             hour={hour}
             make={FoodMakeTuesday}
+            material={FoodMaterialTuesday}
           />
         );
       case "水":
@@ -44,6 +62,7 @@ const Home: NextPage = () => {
             name={FoodNameWednesDay}
             hour={hour}
             make={FoodMakeWednesDay}
+            material={FoodMaterialWednesDay}
           />
         );
       case "木":
@@ -52,11 +71,17 @@ const Home: NextPage = () => {
             name={FoodNameThursday}
             hour={hour}
             make={FoodMakeThursday}
+            material={FoodMaterialThursday}
           />
         );
       case "金":
         return (
-          <WeeksData name={FoodNameFriday} hour={hour} make={FoodMakeFriday} />
+          <WeeksData
+            name={FoodNameFriday}
+            hour={hour}
+            make={FoodMakeFriday}
+            material={FoodMaterialFriday}
+          />
         );
       case "土":
         return (
@@ -64,13 +89,15 @@ const Home: NextPage = () => {
             name={FoodNameSaturday}
             hour={hour}
             make={FoodMakeSaturday}
+            material={FoodMaterialSaturday}
           />
         );
     }
   };
   return (
-    <div>
+    <div style={{ backgroundColor: "red" }}>
       {/* <ParallaxHorizontalScrollPage /> */}
+      <p>hesder</p>
       {Weeks()}
     </div>
   );
