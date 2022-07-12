@@ -56,9 +56,10 @@ export const WeeksData = (props: any) => {
   const LunchMenu = props.name.Lunch.menu;
   const DinnerMenu = props.name.Dinner.menu;
   const MoningMenu = props.name.Morning.menu;
-  const LMake = props.make.Lunch.menu;
-  const DMake = props.make.Dinner.menu;
-  const MMake = props.make.Morning.menu;
+  const LMake = props.make.Lunch;
+  console.log(LMake);
+  const DMake = props.make.Dinner;
+  const MMake = props.make.Morning;
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -86,11 +87,11 @@ export const WeeksData = (props: any) => {
   };
   const Foodmake = () => {
     switch (true) {
-      case 6 <= props.hour || props.hour >= 9:
+      case 6 <= Hour && 9 >= Hour:
         return <MorningMake make={MMake} />;
-      case 10 <= props.hour || props.hour >= 14:
+      case 10 <= Hour && 14 >= Hour:
         return <LunchMake make={LMake} />;
-      case 15 <= props.hour || props.hour >= 20:
+      case 15 <= Hour && 20 >= Hour:
         return <DinnerMake make={DMake} />;
       default:
         return <p>食べるな殺すぞ</p>;
